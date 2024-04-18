@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+    <title>KFC Indonesia</title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  </head>
+  <body>
+    <!-- ======== Preloader =========== -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+    <!-- ======== Preloader =========== -->
+
+    <!-- ======== sidebar-nav start =========== -->
+    <aside class="sidebar-nav-wrapper">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img id="sidebar-brand" src="assets/images/1200px-KFC_logo.svg.png" alt="logo" />
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_1"
+              aria-controls="ddmenu_1"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.74999 18.3333C12.2376 18.3333 15.1364 15.8128 15.7244 12.4941C15.8448 11.8143 15.2737 11.25 14.5833 11.25H9.99999C9.30966 11.25 8.74999 10.6903 8.74999 10V5.41666C8.74999 4.7263 8.18563 4.15512 7.50586 4.27556C4.18711 4.86357 1.66666 7.76243 1.66666 11.25C1.66666 15.162 4.83797 18.3333 8.74999 18.3333Z" />
+                  <path
+                    d="M17.0833 10C17.7737 10 18.3432 9.43708 18.2408 8.75433C17.7005 5.14918 14.8508 2.29947 11.2457 1.75912C10.5629 1.6568 10 2.2263 10 2.91665V9.16666C10 9.62691 10.3731 10 10.8333 10H17.0833Z" />
+                </svg>
+              </span>
+              <span class="text">Dashboard</span>
+            </a>
+            <ul id="ddmenu_1" class="collapse show dropdown-nav">
+              <li>
+                <a href="index.html" class="active"> eCommerce </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
+
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <!-- ========== header start ========== -->
+      <header class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 col-md-5 col-6">
+              <div class="header-left d-flex align-items-center">
+                <div class="menu-toggle-btn mr-15">
+                  <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                    <i class="lni lni-chevron-left me-2"></i> Menu
+                  </button>
+                </div>
+                <div class="header-search d-none d-md-flex">
+                  <form action="#">
+                    <input type="text" placeholder="Search..." />
+                    <button><i class="lni lni-search-alt"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-6">
+              <div class="header-right">
+                <!-- notification start -->
+                <!-- notification end -->
+                <!-- message start -->
+                <!-- message end -->
+                <!-- profile start -->
+                <div class="profile-box ml-15">
+                  <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="profile-info">
+                      <div class="info">
+                        <div class="image">
+                          <img src="assets/images/1665544238303.jpg" alt="" />
+                        </div>
+                        <div>
+                          <h6 class="fw-500">Muhammad Fauzan</h6>
+                          <p>Admin</p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                    <li>
+                      <div class="author-info flex items-center !p-1">
+                        <div class="image">
+                          <img src="assets/images/1665544238303.jpg" alt="image">
+                        </div>
+                        <div class="content">
+                          <h4 class="text-sm">Muhammad Fauzan</h4>
+                          <h4 class="text-sm">Institut Teknologi Sumatera</h4>
+                          <h4 class="text-sm">Matematika</h4>
+                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs" href="#">muhammad.122160028@student.itera.ac.id</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-user"></i> View Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-alarm"></i> Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- profile end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ========== header end ========== -->
+
+      <!-- ========== section start ========== -->
+      <section class="section">
+        <div class="container-fluid">
+          <!-- ========== title-wrapper start ========== -->
+          <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="title">
+                  <h2>KFC Provinsi Bangka Belitung</h2>
+                </div>
+              </div>
+              <!-- end col -->
+              <div class="col-md-6">
+                <div class="breadcrumb-wrapper">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="#0">Dashboard</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        eCommerce
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- ========== title-wrapper end ========== -->
+          <h3 class="mb-10">Keuangan KFC Indonesia Tahun 2022
+            (Dalam Rp Juta)
+          </h3>
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon purple">
+                  <i class="lni lni-cart-full"></i>
+                </div>
+                <div class="content">
+                  <h5 class="mb-10">Pendapatan</h5>
+                  <h3 class="text-bold mb-10">5,857,474</h3>
+                  <p class="text-sm text-success">
+                    <i class="lni lni-arrow-up"></i> +21% (2021)
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon success">
+                  <i class="lni lni-dollar"></i>
+                </div>
+                <div class="content">
+                  <h5 class="mb-10">Laba Bruto</h5>
+                  <h3 class="text-bold mb-10">3,664,728</h3>
+                  <p class="text-sm text-success">
+                    <i class="lni lni-arrow-up"></i> +24.82% (2021)
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon primary">
+                  <i class="lni lni-credit-cards"></i>
+                </div>
+                <div class="content">
+                  <h5 class="mb-10">Laba (Rugi) Usaha</h5>
+                  <h3 class="text-bold mb-10">(42,264)</h3>
+                  <p class="text-sm text-danger">
+                    <i class="lni lni-arrow-down"></i> -87.01% (2021)
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon orange">
+                  <i class="lni lni-user"></i>
+                </div>
+                <div class="content">
+                  <h5 class="mb-10">Total Aset</h5>
+                  <h3 class="text-bold mb-10">3,822,405</h3>
+                  <p class="text-sm text-success">
+                    <i class="lni lni-arrow-up"></i> +9.17% (2021)
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap justify-content-between">
+                  <div class="left">
+                    <h3 class="text-medium mb-10">Harga Bahan Baku Pangan Provinsi Bangka Belitung</h3>
+                    <h3 class="text-medium mb-10">Tahun 2023</h3>
+                    <h6 class="text-medium mb-10">/Kg</h6>
+                  </div>
+                  <div class="right">
+                    <div class="select-style-1">
+                      <div class="select-position select-sm">
+                        <select class="light-bg" onchange="updateChart1(this)">
+                          <option value="beras">Beras</option>
+                          <option value="ayam">Daging Ayam</option>
+                          <option value="sapi">Daging Sapi</option>
+                          <option value="telur">Telur Ayam</option>
+                          <option value="bwmerah">Bawang Merah</option>
+                          <option value="bwputih">Bawang Putih</option>
+                          <option value="cabai">Cabai Merah</option>
+                          <option value="minyak">Minyak Goreng</option>
+                          <option value="gula">Gula Pasir</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end select -->
+                  </div>
+                </div>
+                <!-- End Title -->
+                <div class="chart">
+                  <canvas id="Chart1" style="width: 100%; height: 400px; margin-left: -35px;"></canvas>
+                </div>
+                <!-- End Chart -->
+              </div>
+            </div>
+          <!-- End Row -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap align-items-center justify-content-between">
+                  <div class="left">
+                    <h6 class="text-medium mb-2">Penilaian Konsumen</h6>
+                  </div>
+                  <div class="right">
+                    <div class="select-style-1 mb-2">
+                      <div class="select-position select-sm">
+                        <select class="light-bg" onchange="updateChart2(this)">
+                          <option value="btc">KFC Bangka Trade Center</option>
+                          <option value="btm">KFC Box TJ Mart Bangka</option>
+                          <option value="ppp">KFC Pangkal Pinang Plaza</option>
+                          <option value="ssb">KFC SPBU Sudirman Bangka</option>
+                          <option value="slb">KFC Sungai Liat Bangka</option>
+                          <option value="tpb">KFC Tanjung Pandan Belitung</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end select -->
+                  </div>
+                </div>
+                <!-- End Title -->
+                <div class="chart">
+                  <div id="legend3">
+                    <ul class="legend3 d-flex flex-wrap align-items-center mb-30">
+                      <li>
+                        <div class="d-flex">
+                          <span class="bg-color primary-bg"> </span>
+                          <div class="text">
+                            <p class="text-sm text-success">
+                              <span class="text-dark">Google Maps</span>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex">
+                          <span class="bg-color purple-bg"></span>
+                          <div class="text">
+                            <p class="text-sm text-success">
+                              <span class="text-dark">GrabFood</span>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex">
+                          <span class="bg-color orange-bg"></span>
+                          <div class="text">
+                            <p class="text-sm text-danger">
+                              <span class="text-dark">GoFood</span>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <canvas id="Chart3" style="width: 100%; height: 450px; margin-left: -35px;"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-lg-6">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap align-items-center justify-content-between">
+                  <div class="left">
+                    <h6 class="text-medium mb-30">Tingkat Kepuasan Pelanggan</h6>
+                  </div>
+                  <div class="right">
+                    <div class="select-style-1">
+                      <div class="select-position select-sm">
+                        <select class="light-bg" onchange="updateChart3(this)">
+                          <option value="gMaps">Google Map</option>
+                          <option value="grab">GrabFood</option>
+                          <option value="gofood">GoFood</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end select -->
+                  </div>
+                </div>
+                <!-- End Title -->
+                <div class="chart">
+                  <canvas id="Chart2" style="width: 100%; height: 400px; margin-left: -45px;"></canvas>
+                </div>
+                <!-- End Chart -->
+              </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-lg-6">
+              <div class="card-style mb-30">
+                <div class="title d-flex justify-content-between align-items-center">
+                  <div class="left">
+                    <h6 class="text-medium mb-30">Sells by State</h6>
+                  </div>
+                </div>
+                <!-- End Title -->
+                <div id="map" style="width: 100%; height: 400px; overflow: hidden;"></div>
+                <p>Last updated: 7 days ago</p>
+              </div>
+          </div>
+
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/dynamic-pie-chart.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/world-merc.js"></script>
+    <script src="assets/js/polyfill.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/jvectormap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <script>
+      var map = L.map('map').setView([-2.626493952404914, 106.93854233532262], 7);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var bankLocations = [
+        { name: 'KFC Sungai Liat Bangka', location: [-1.8526697946432222, 106.11765716355997] },
+        { name: 'KFC Bangka Trade Center', location: [-2.103151888006084, 106.11879070286676] },
+        { name: 'KFC Tanjung Pandan Belitung', location: [-2.7347088273666063, 107.63519944393923] },
+        { name: 'KFC Box TJ Mart Bangka', location: [-2.133167752962402, 106.0983629043115] },
+        { name: 'KFC Pangkal Pinang Plaza', location: [-2.121714431948795, 106.11629208434744] },
+        { name: 'KFC SPBU Sudirman Bangka Lampung', location: [-2.0943547216877674, 106.11240535234695] },
+       // Tambahkan lokasi lainnya di sini sesuai kebutuhan
+      ];
+
+      bankLocations.forEach(function(bank) {
+         L.marker(bank.location)
+          .addTo(map)
+          .bindPopup('<b>' + bank.name + '</b>')
+          .openPopup();
+      });
+
+      // =========== chart one start
+      const panganValue = [
+        {
+          month: 'Jan', pangans: { beras : 12800, ayam : 38200, sapi : 134900 , telur : 25350 , bwmerah: 79900 , bwputih : 36200 , cabai : 73200 , minyak: 22650 , gula: 13500 }
+        },
+        {
+          month: 'Feb', pangans: { beras : 12800, ayam : 38000, sapi : 134900 , telur : 26200 , bwmerah: 46100 , bwputih : 32200 , cabai : 73200 , minyak: 22650 , gula: 13500  }
+        },
+        {
+          month: 'Mar', pangans: { beras : 12800, ayam : 41650, sapi : 134450 , telur : 21700 , bwmerah: 55900 , bwputih : 31900 , cabai : 73200 , minyak: 20700 , gula: 13500  }
+        },
+        {
+          month: 'Apr', pangans: { beras : 12600, ayam : 38000, sapi : 134450 , telur : 21150 , bwmerah: 46200 , bwputih : 32700 , cabai : 96450 , minyak: 21250 , gula: 13500  }
+        },
+        {
+          month: 'Mei', pangans: { beras : 13150, ayam : 32650, sapi : 134900 , telur : 17450 , bwmerah: 44950 , bwputih : 33950 , cabai : 96450 , minyak: 19450 , gula: 13500  }
+        },
+        {
+          month: 'Jun', pangans: { beras : 13300, ayam : 35000, sapi : 127200 , telur : 17500 , bwmerah: 58700 , bwputih : 33450 , cabai : 59950 , minyak: 19550 , gula: 13500  }
+        },
+        {
+          month: 'Jul', pangans: { beras : 13350, ayam : 40500, sapi : 127200 , telur : 17500 , bwmerah: 57700 , bwputih : 36950 , cabai : 57900 , minyak: 19550 , gula: 13750  }
+        },
+        {
+          month: 'Agu', pangans: { beras : 13500, ayam : 42700, sapi : 127200 , telur : 17500 , bwmerah: 66900 , bwputih : 52200 , cabai : 68950 , minyak: 19700 , gula: 14000  }
+        },
+        {
+          month: 'Sep', pangans: { beras : 13500, ayam : 43500, sapi : 126750 , telur : 17450 , bwmerah: 42950 , bwputih : 46950 , cabai : 66950 , minyak: 19700 , gula: 14000  }
+        },
+        {
+          month: 'Okt', pangans: { beras : 13550, ayam : 43200, sapi : 126700 , telur : 23650 , bwmerah: 43850 , bwputih : 48400 , cabai : 72200 , minyak: 19600 , gula: 14000  }
+        },
+        {
+          month: 'Nov', pangans: { beras : 13550, ayam : 43500, sapi : 126700 , telur : 24500 , bwmerah: 43000 , bwputih : 48400 , cabai : 72200 , minyak: 19800 , gula: 14000  }
+        },
+        {
+          month: 'Des', pangans: { beras : 13550, ayam : 43200, sapi : 126700 , telur : 25350 , bwmerah: 43800 , bwputih : 48400 , cabai : 92450 , minyak: 19800 , gula: 14400  }
+        },
+      ]
+      const ctx1 = document.getElementById("Chart1").getContext("2d");
+      const chart1 = new Chart(ctx1, {
+        type: "line",
+        data: {
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "transparent",
+              borderColor: "#365CF5",
+              data: panganValue,
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#365CF5",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#fff",
+              pointHoverBorderWidth: 5,
+              borderWidth: 5,
+              pointRadius: 8,
+              pointHoverRadius: 8,
+              cubicInterpolationMode: "monotone", // Add this line for curved line
+              parsing: {
+                xAxisKey: 'month',
+                yAxisKey: 'pangans.beras',
+              }
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            tooltip: {
+              callbacks: {
+                labelColor: function (context) {
+                  return {
+                    backgroundColor: "#ffffff",
+                    color: "#171717"
+                  };
+                },
+              },
+              intersect: false,
+              backgroundColor: "#f9f9f9",
+              title: {
+                fontFamily: "Plus Jakarta Sans",
+                color: "#8F92A1",
+                fontSize: 12,
+              },
+              body: {
+                fontFamily: "Plus Jakarta Sans",
+                color: "#171717",
+                fontStyle: "bold",
+                fontSize: 16,
+              },
+              multiKeyBackground: "transparent",
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 10,
+              },
+              bodyAlign: "center",
+              titleAlign: "center",
+              titleColor: "#8F92A1",
+              bodyColor: "#171717",
+              bodyFont: {
+                family: "Plus Jakarta Sans",
+                size: "16",
+                weight: "bold",
+              },
+            },
+            legend: {
+              display: false,
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          title: {
+            display: false,
+          },
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+                max: 150000,
+                min: 10000,
+              },
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+        },
+      });
+
+      const ct1 = document.getElementById("Chart1")
+      function updateChart1(option){
+        chart1.data.datasets[0].parsing.yAxisKey = `pangans.${option.value}`;
+        chart1.update();
+      }
+      // =========== chart one end
+
+      const storesValue = [
+        {
+          store : "KFC Bangka Trade Center", rates : {gMaps : 4.5, grab : 3.25, gofood : 3.31}
+        },
+        {
+          store : "KFC Box TJ Mart Bangka", rates : {gMaps : 4.52, grab : 3.69, gofood : 3.76}
+        },
+        {
+          store : "KFC Pangkal Pinang Plaza", rates : {gMaps : 4.11, grab : 3.55, gofood : 3.56}
+        },
+        {
+          store : "KFC SPBU Sudirman Bangka", rates : {gMaps : 4.27, grab : 3.41, gofood : 3.57}
+        },
+        {
+          store : "KFC Sungai Liat Bangka", rates : {gMaps : 4.06, grab : 3.98, gofood : 3.59}
+        },
+        {
+          store : "KFC Tanjung Pandan Belitung", rates : {gMaps : 4.52, grab : 4.18, gofood : 3.36}
+        },
+      ]
+      // =========== chart two start
+      const ctx2 = document.getElementById("Chart2").getContext("2d");
+      const chart2 = new Chart(ctx2, {
+        type: "bar",
+        data: {
+          // labels: ["KFC Bangka Trade Center", "KFC Box TJ Mart Bangka", "KFC Pangkal Pinang Plaza", "KFC SPBU Sudirman Bangka", "KFC Sungai Liat Bangka"
+          // , "KFC Tanjung Pandan Belitung",
+          // ],
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "#365CF5",
+              borderRadius: 30,
+              barThickness: 20,
+              maxBarThickness: 8,
+              data: storesValue,
+              parsing: {
+                xAxisKey: 'store',
+                yAxisKey: 'rates.gMaps',
+              }
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            tooltip: {
+              callbacks: {
+                titleColor: function (context) {
+                  return "#8F92A1";
+                },
+                label: function (context) {
+                  let label = context.dataset.label || "";
+
+                  if (label) {
+                    label += ": ";
+                  }
+                  label += context.parsed.y;
+                  return label;
+                },
+              },
+              backgroundColor: "#F3F6F8",
+              titleAlign: "center",
+              bodyAlign: "center",
+              titleFont: {
+                size: 12,
+                weight: "bold",
+                color: "#8F92A1",
+              },
+              bodyFont: {
+                size: 16,
+                weight: "bold",
+                color: "#171717",
+              },
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 10,
+              },
+          },
+          },
+          legend: {
+            display: false,
+            },
+          legend: {
+            display: false,
+          },
+          layout: {
+            padding: {
+              top: 15,
+              right: 15,
+              bottom: 15,
+              left: 15,
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+                max: 5,
+                min: 0,
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                drawTicks: false,
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            title: {
+              display: false,
+            },
+          },
+        },
+      });
+      function updateChart3(option){
+        chart2.data.datasets[0].parsing.yAxisKey = `rates.${option.value}`;
+        chart2.update();
+      }
+      // =========== chart two end
+
+      // =========== chart three start
+      const gMapsValue = [
+        {
+          month: 'Bintang 1', gerai: { btc : 4, btm : 3, ppp : 8 , ssb : 8 , slb: 14 , tpb : 4}
+        },
+        {
+          month: 'Bintang 2', gerai: { btc : 1, btm : 0, ppp : 4 , ssb : 2 , slb: 2 , tpb : 1}
+        },
+        {
+          month: 'Bintang 3', gerai: { btc : 7, btm : 8, ppp :11 , ssb : 5 , slb: 4 , tpb : 6}
+        },
+        {
+          month: 'Bintang 4', gerai: { btc : 17, btm : 20, ppp : 23 , ssb : 25 , slb: 24 , tpb : 17}
+        },
+        {
+          month: 'Bintang 5', gerai: { btc : 71, btm : 69, ppp : 54 , ssb : 60 , slb: 56 , tpb : 72}
+        },
+      ]
+      const grabValue = [
+        {
+          month: 'Bintang 1', gerai: { btc : 28, btm : 18, ppp : 16, ssb : 16 , slb: 13 , tpb : 11}
+        },
+        {
+          month: 'Bintang 2', gerai: { btc : 7, btm : 10, ppp :11 , ssb : 14 , slb: 8 , tpb : 4}
+        },
+        {
+          month: 'Bintang 3', gerai: { btc : 13, btm : 10, ppp :15 , ssb : 16 , slb: 5 , tpb : 4}
+        },
+        {
+          month: 'Bintang 4', gerai: { btc : 16, btm : 9, ppp : 18 , ssb : 21 , slb: 16 , tpb : 18}
+        },
+        {
+          month: 'Bintang 5', gerai: { btc : 36, btm : 53, ppp : 40 , ssb : 33 , slb: 58 , tpb : 63}
+        },
+      ]
+      const gojekValue = [
+        {
+          month: 'Bintang 1', gerai: { btc : 21, btm : 15, ppp : 19 , ssb : 22 , slb: 18 , tpb : 23}
+        },
+        {
+          month: 'Bintang 2', gerai: { btc : 13, btm : 12, ppp : 7 , ssb : 9 , slb: 9 , tpb : 11}
+        },
+        {
+          month: 'Bintang 3', gerai: { btc : 17, btm : 7, ppp :14 , ssb : 10 , slb: 11 , tpb : 10}
+        },
+        {
+          month: 'Bintang 4', gerai: { btc : 12, btm : 14, ppp : 19 , ssb : 8 , slb: 20 , tpb : 19}
+        },
+        {
+          month: 'Bintang 5', gerai: { btc : 37, btm : 52, ppp : 41 , ssb : 51 , slb: 42 , tpb : 37}
+        },
+      ]
+      const ctx3 = document.getElementById("Chart3").getContext("2d");
+      const chart3 = new Chart(ctx3, {
+        type: "bar",
+        data: {
+          datasets: [
+            {
+              label: "Google Maps",
+              backgroundColor: "#365CF5",
+              data: gMapsValue,
+              borderRadius: 10,
+              barThickness: 20,
+              maxBarThickness: 100,
+              
+            },
+            {
+              label: "GrabFood",
+              backgroundColor: "#9b51e0",
+              data: grabValue,
+              borderRadius: 30,
+              barThickness: 20,
+              maxBarThickness: 100,
+            },
+            {
+              label: "GoFood",
+              backgroundColor: "#f2994a",
+              data: gojekValue,
+              borderRadius: 10,
+              barThickness: 20,
+              maxBarThickness: 100,
+            },
+          ],
+        },
+        options: {
+          parsing: {
+            xAxisKey: 'month',
+            yAxisKey: 'gerai.btc',
+          },
+          plugins: {
+            tooltip: {
+              intersect: false,
+              backgroundColor: "#fbfbfb",
+              titleColor: "#8F92A1",
+              bodyColor: "#272727",
+              titleFont: {
+                size: 16,
+                family: "Plus Jakarta Sans",
+                weight: "400",
+              },
+              bodyFont: {
+                family: "Plus Jakarta Sans",
+                size: 16,
+              },
+              multiKeyBackground: "transparent",
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 15,
+              },
+              borderColor: "rgba(143, 146, 161, .1)",
+              borderWidth: 1,
+              enabled: true,
+            },
+            title: {
+              display: false,
+            },
+            legend: {
+              display: false,
+            },
+          },
+          layout: {
+            padding: {
+              top: 0,
+            },
+          },
+          responsive: true,
+          // maintainAspectRatio: false,
+          legend: {
+            display: false,
+          },
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+              },
+              max: 80,
+              min: 0,
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                drawTicks: false,
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+        },
+      });
+
+      function updateChart2(option){
+        chart3.options.parsing.yAxisKey = `gerai.${option.value}`;
+        chart3.update();
+      }
+      // =========== chart three end
+    </script>
+  </body>
+</html>
